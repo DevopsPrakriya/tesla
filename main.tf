@@ -15,6 +15,5 @@ resource "azurerm_resource_group" "rg3" {
 }
 resource "azurerm_resource_group" "rg103" {
   name     = "tesla-rg103"
-  location = "West Europe"
-  
+  location = "West Europe" 
 }
