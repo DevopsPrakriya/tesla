@@ -29,3 +29,9 @@ resource "azurerm_resource_group" "rg104" {
 
   
 }
+
+resource "azurerm_resource_group" "rg106" {
+  name     = "tesla-rg106"
+  location = "India West"
+  
+}
