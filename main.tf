@@ -13,3 +13,8 @@ resource "azurerm_resource_group" "rg3" {
   location = "West Europe"
   
 }
+resource "azurerm_resource_group" "newrg101" {
+  name     = "tesla-newrg101"
+  location = "centralus"
+  
+}
