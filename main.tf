@@ -23,3 +23,8 @@ resource "azurerm_resource_group" "rg105" {
   location = "centalus"
   
 }
+resource "azurerm_resource_group" "rg110" {
+  name     = "tesla-rg110"
+  location = "centalus"
+  
+}
