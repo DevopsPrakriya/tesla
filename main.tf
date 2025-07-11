@@ -18,8 +18,14 @@ resource "azurerm_resource_group" "rg103" {
   location = "West Europe"
   
 }
+
+resource "azurerm_resource_group" "rg105" {
+  name     = "tesla-rg105"
+  location = "centalus"
+}
 resource "azurerm_resource_group" "rg104" {
   name     = "tesla-rg104"
   location = "West Europe"
+
   
 }
