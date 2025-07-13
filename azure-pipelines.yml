@@ -8,13 +8,11 @@ variables:
   TF_VERSION: '1.6.0'   # Change as needed
 
 steps:
-- task: TerraformInstaller@0
+- task: TerraformInstaller@1
+  displayName: terraforminstaller
   inputs:
-    terraformVersion: '$(TF_VERSION)'
+    terraformVersion: 'latest'
 
-- script: |
-    terraform --version
-  displayName: 'Check Terraform Version'
 
 - checkout: self
 
