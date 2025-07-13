@@ -2,7 +2,7 @@ trigger:
 - main
 
 pool:
-  name: tesla-agent  
+  name: Default 
   
 
 variables:
