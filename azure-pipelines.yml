@@ -1,0 +1,37 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  TF_VERSION: '1.6.0'   # Change as needed
+
+steps:
+- task: TerraformInstaller@0
+  inputs:
+    terraformVersion: '$(TF_VERSION)'
+
+- script: |
+    terraform --version
+  displayName: 'Check Terraform Version'
+
+- checkout: self
+
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'tesla-infra'  # 👈 Your service connection name
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      echo "Initializing Terraform"
+      terraform init
+
+      echo "Planning Terraform"
+      terraform plan -out=tfplan
+
+      echo "Applying Terraform"
+      terraform apply -auto-approve tfplan
+
+    workingDirectory: '$(System.DefaultWorkingDirectory)'
+    
