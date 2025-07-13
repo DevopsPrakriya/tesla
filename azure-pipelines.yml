@@ -2,7 +2,8 @@ trigger:
 - main
 
 pool:
-  vmImage: 'ubuntu-latest'
+  name: tesla-agent  
+  
 
 variables:
   TF_VERSION: '1.6.0'   # Change as needed
